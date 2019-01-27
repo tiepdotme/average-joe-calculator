@@ -92,7 +92,7 @@ class Calculator extends Component {
           selected={food}
           handleChange={this.handleBtnGroupChange}
         />
-        {food}
+        {food ? "Yes" : "No"}
 
         <BtnGroup
           name="wifi"
@@ -100,9 +100,9 @@ class Calculator extends Component {
           selected={wifi}
           handleChange={this.handleBtnGroupChange}
         />
-        {wifi}
+        {wifi ? "Yes" : "No"}
 
-        <h3>{this.state.score}</h3>
+        <h2>Overall Score: {this.state.score}</h2>
       </div>
     );
   }
