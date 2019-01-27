@@ -5,7 +5,8 @@ class Slider extends Component {
   render() {
     const { min, max, name, value, handleChange } = this.props;
     return (
-      <div>
+      <label>
+        <h3 style={{textTransform: "capitalize"}}>{name}</h3>
         <input
           type="range"
           list="tickmarks"
@@ -22,7 +23,7 @@ class Slider extends Component {
           <option value="4" />
           <option value="5" />
         </datalist>
-      </div>        
+      </label>
     );
   }
 }
