@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+
 import Slider from '../components/Slider';
 import BtnGroup from '../components/BtnGroup';
+import Review from '../components/Review';
+
 import { PRICE_BUTTONS, BOOL_BUTTONS } from '../constants/buttons';
+import { calculateScore } from '../scripts/calculate-score';
 
 class Calculator extends Component {
   constructor(props) {
@@ -17,24 +21,13 @@ class Calculator extends Component {
     }
   }
 
-  calculateScore = ({ coffee, aesthetic, seating, price, food, wifi }) => {
-    const score = 
-      coffee * 6 +
-      aesthetic * 4 +
-      seating * 4 +
-      price * 5 +
-      (food ? 10 : 0) +
-      (wifi ? 5 : 0);
-    return score;
-  }
-
   componentDidMount() {
     this.updateScore();
   }
 
   updateScore = () => {
     this.setState((state) => {
-      return { score: this.calculateScore(state) };
+      return { score: calculateScore(state) };
     });
   }
 
@@ -46,7 +39,6 @@ class Calculator extends Component {
   }
 
   handleBtnGroupChange = (name, newValue) => {
-    console.log(name, newValue);
     this.setState({
       [name]: newValue
     }, () => this.updateScore());
@@ -102,7 +94,7 @@ class Calculator extends Component {
         />
         {wifi ? "Yes" : "No"}
 
-        <h2>Overall Score: {this.state.score}</h2>
+        <Review factors={this.state} />
       </div>
     );
   }

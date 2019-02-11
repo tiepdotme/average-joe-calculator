@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class BtnGroup extends Component {
-  renderButtons = () => {
+  renderButtons() {
     const { name, buttons, selected, handleChange } = this.props;
 
     return buttons.map((button, i) => {
