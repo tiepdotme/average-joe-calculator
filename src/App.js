@@ -6,7 +6,7 @@ import GlobalStlye from './stylesheets/global-styles';
 
 const Container = styled.div`
   margin: 1rem auto;
-  width: 1000px;
+  width: 33rem;
   max-width: 90%;
 `;
 

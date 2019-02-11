@@ -17,6 +17,18 @@ const ReviewDiv = styled.div`
   background: ${props => props.theme.black};
   color: ${props => props.theme.goldLight};
   ${lightTextOnDark}
+
+  @media(max-width: ${props => props.theme.breakMedium}) {
+    grid-template:
+      "overall"
+      "breakdown";
+    max-width: 20rem;
+    margin: 1.5rem auto;
+  }
+
+  @media(max-width: ${props => props.theme.breakSmall}) {
+    max-width: 14rem;
+  }
 `;
 
 const Overall = styled.div`
@@ -39,7 +51,7 @@ const Breakdown = styled.div`
   grid-area: breakdown;
   margin: 1rem 0;
   padding: 0 2rem;
-  border-left: 2px ${props => props.theme.grey};
+  border-left: 2px solid ${props => props.theme.grey};
 
   display: grid;
   grid-auto-flow: column;
@@ -47,6 +59,18 @@ const Breakdown = styled.div`
   grid-template-column: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   align-items: center;
+
+  @media(max-width: ${props => props.theme.breakMedium}) {
+    margin: 0 2rem;
+    padding: 1rem 0;
+    border-top: 2px solid ${props => props.theme.grey};
+    border-left: 0;
+  }
+
+  @media(max-width: ${props => props.theme.breakSmall}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
 `;
 
 const Category = styled.div`
