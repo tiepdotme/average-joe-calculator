@@ -76,7 +76,6 @@ class Calculator extends Component {
           selected={price}
           handleChange={this.handleBtnGroupChange}
         />
-        {price}
 
         <BtnGroup
           name="food"
@@ -84,7 +83,6 @@ class Calculator extends Component {
           selected={food}
           handleChange={this.handleBtnGroupChange}
         />
-        {food ? "Yes" : "No"}
 
         <BtnGroup
           name="wifi"
@@ -92,7 +90,6 @@ class Calculator extends Component {
           selected={wifi}
           handleChange={this.handleBtnGroupChange}
         />
-        {wifi ? "Yes" : "No"}
 
         <Review factors={this.state} />
       </div>
