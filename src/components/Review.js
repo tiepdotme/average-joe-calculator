@@ -56,7 +56,7 @@ const Breakdown = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 2rem;
-  grid-template-column: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
   align-items: center;
 
